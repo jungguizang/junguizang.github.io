@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Hexo</title>
+  <title>Hexo搭建踩坑记录 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="不知写什么，想起自己在搭建hexo博客时的折腾，便写此文记录一下自己的搭建过程中踩过的坑，若有所助，倍感荣幸。">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建踩坑记录">
+<meta property="og:url" content="http://yoursite.com/2019/08/25/Hexo博客搭建/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="不知写什么，想起自己在搭建hexo博客时的折腾，便写此文记录一下自己的搭建过程中踩过的坑，若有所助，倍感荣幸。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-25T08:27:18.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Hexo搭建踩坑记录">
+<meta name="twitter:description" content="不知写什么，想起自己在搭建hexo博客时的折腾，便写此文记录一下自己的搭建过程中踩过的坑，若有所助，倍感荣幸。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -157,39 +162,94 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Hexo博客搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Hexo搭建踩坑记录
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 
 
 <a href="/2019/08/25/Hexo博客搭建/" class="archive-article-date">
   	<time datetime="2019-08-25T04:25:54.921Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/25/Hexo博客搭建/">Hexo搭建踩坑记录</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不知写什么，想起自己在搭建hexo博客时的折腾，便写此文记录一下自己的搭建过程中踩过的坑，若有所助，倍感荣幸。</p>
+<a id="more"></a>
+<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><blockquote>
+<ul>
+<li>安装node.js、npm、git<br>  这两个均在官网上下载即可: <a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a> <a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>（<em>node.js建议下载LTS长期支持版</em>）</li>
+<li>创建<a href="https://github.com" target="_blank" rel="noopener">github</a>账户</li>
+<li>安装hexo</li>
+<li>上传github</li>
+<li>开始创作</li>
+</ul>
+</blockquote>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><strong>关于hexo搭建的资料真的很多，我这就写点踩过的坑，不多重复了</strong></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">手把手教你从0开始搭建自己的个人博客</a></li>
+<li><a href="https://www.cnblogs.com/debugxw/p/11006734.html" target="_blank" rel="noopener">win10使用Hexo+GitHub搭建个人博客</a></li>
+</ul>
+<h3 id="填坑记录"><a href="#填坑记录" class="headerlink" title="填坑记录"></a>填坑记录</h3><h4 id="1-npm速度慢。"><a href="#1-npm速度慢。" class="headerlink" title="1. npm速度慢。"></a>1. <code>npm</code>速度慢。</h4><p>毕竟墙是我天朝传统，还好有淘宝的镜像，可以用<code>cnpm</code>代替<code>npm</code><br>安装代码:<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+<h4 id="2-启动运行"><a href="#2-启动运行" class="headerlink" title="2.启动运行"></a>2.启动运行</h4><p><code>hexo g</code>–将md文件生成html文件<br><code>hexo s</code>–启动服务器，之后便可在<code>localhost:4000</code>预览了</p>
+<blockquote>
+<p>注：要先生成才能预览</p>
+</blockquote>
+<h4 id="3-hexo无法上传远端"><a href="#3-hexo无法上传远端" class="headerlink" title="3.hexo无法上传远端"></a>3.hexo无法上传远端</h4><ul>
+<li>在<strong>cmd</strong>中使用命令： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+</li>
+</ul>
+<p>运行一半后出现错误与警告，<br>原因：安装git时所选使用位置不对，无法在<strong>cmd</strong>中使用。<br>解决方法：直接将blog文件在<strong>git bush</strong>打开，然后照常使用原先命令即可</p>
+<ul>
+<li><strong>ssh</strong>密钥无法推送：可换用<strong>https</strong>链接的方式推送</li>
+</ul>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>整理了一下，现在看来都不是什么大问题，可在当时却困扰了我几天，<del>在弄不明白时甚至全部清空重新安装</del>(笑)，不知你是否也有相同的问题，希望能有所帮助。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -201,60 +261,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/25/Hexo博客搭建/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/04/my first/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello,world!你好,世界!</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-<a href="/2019/07/04/my first/" class="archive-article-date">
-  	<time datetime="2019-07-04T05:14:21.551Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/04/my first/">Hello,world!你好,世界!</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -292,8 +398,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
