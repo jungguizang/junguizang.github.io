@@ -36,6 +36,9 @@
 </ul>
 <h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>整理了一下，现在看来都不是什么大问题，可在当时却困扰了我几天，<del>在弄不明白时甚至全部清空重新安装</del>(笑)，不知你是否也有相同的问题，希望能有所帮助。</p>
 ]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello,world!你好,世界!</title>
@@ -57,6 +60,9 @@
 <li><strong>可复现：</strong>所写、所说一定要可复现，不然都是耍流氓。毕竟别人看你的博客就是要解决问题的。<br><br>以上就是今日的一些随想，感谢你片刻的驻足。</li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
   </entry>
   <entry>
     <title>随机行走——三角形区域</title>
@@ -73,5 +79,8 @@
 <h2 id="代码详情"><a href="#代码详情" class="headerlink" title="代码详情"></a>代码详情</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;ctime&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//二维向量初始化</span><br><span class="line">void init(vector&lt;vector&lt;int&gt; &gt;&amp; area, int row) &#123;</span><br><span class="line">	area.resize(row);</span><br><span class="line">	for (int i = 0; i &lt; row; i++) &#123;</span><br><span class="line">		area.push_back(vector&lt;int&gt;());</span><br><span class="line">		area[i].resize(i * 2 + 1, 0);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//判断是否走遍全区域</span><br><span class="line">bool judge(vector&lt;vector&lt;int&gt; &gt;&amp; area, int&amp; border) &#123;</span><br><span class="line">	for (int i = 0; i &lt; border; i++) &#123;</span><br><span class="line">		for (int j = 0; j &lt; area[i].size(); j++) &#123;</span><br><span class="line">			if (!area[i][j]) return false;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line">//输出每小块到达次数</span><br><span class="line">void print(vector&lt;vector&lt;int&gt; &gt;&amp; area, int&amp; border) &#123;</span><br><span class="line">	for (int i = 0; i &lt; border; i++) &#123;</span><br><span class="line">		cout &lt;&lt; i &lt;&lt; &quot;行: &quot;;</span><br><span class="line">		for (int j = 0; j &lt; area[i].size(); j++) cout &lt;&lt; area[i][j] &lt;&lt; &quot; &quot;;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//具体行动过程：0为原地,1为左,2为有,3为上下(奇上偶下)</span><br><span class="line">void process(vector&lt;vector&lt;int&gt; &gt;&amp; area, int&amp; row, int&amp; column, int&amp; border) &#123;</span><br><span class="line">	int choice = rand() % 4;</span><br><span class="line">	cout &lt;&lt; row &lt;&lt; &quot;行&quot; &lt;&lt; column &lt;&lt; &quot;列: &quot; &lt;&lt; choice &lt;&lt; endl;</span><br><span class="line">	if (choice == 0) area[row][column]++;</span><br><span class="line">	if (choice == 1) column == 0 ? area[row][column]++ : area[row][--column];</span><br><span class="line">	if (choice == 2)column == row * 2 ? area[row][column]++ : area[row][++column]++;</span><br><span class="line">	if (choice == 3) &#123;</span><br><span class="line">		if (column % 2)area[--row][--column]++;</span><br><span class="line">		else &#123;</span><br><span class="line">			if (row == border - 1) area[row][column]++;</span><br><span class="line">			else area[++row][++column]++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	srand(time(NULL));</span><br><span class="line">	int row;</span><br><span class="line">	cout &lt;&lt; &quot;input row:&quot;;</span><br><span class="line">	cin &gt;&gt; row;</span><br><span class="line">	if (row == 1) &#123;</span><br><span class="line">		cout &lt;&lt; &quot;0行:1&quot; &lt;&lt; endl;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	if (row &lt; 1) &#123;</span><br><span class="line">		cout &lt;&lt; &quot;Error row!&quot; &lt;&lt; endl;</span><br><span class="line">			return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	vector&lt;vector&lt;int&gt; &gt; area;</span><br><span class="line">	init(area, row);</span><br><span class="line">	int now_row = 0;</span><br><span class="line">	int now_column = 0;</span><br><span class="line">	area[0][0]++;</span><br><span class="line">	while (1) &#123;</span><br><span class="line">		process(area, now_row, now_column, row);</span><br><span class="line">		if (judge(area, row)) &#123;</span><br><span class="line">			print(area, row);</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
 </search>
