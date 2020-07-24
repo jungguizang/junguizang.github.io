@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo搭建踩坑记录</title>
+    <url>/2019/08/25/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p>看到关于博客的话题，想起自己在搭建hexo博客时的折腾，便写此文记录一下自己的搭建过程中踩过的坑，若有所助，倍感荣幸。</p>
+<a id="more"></a>
+
+<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><blockquote>
+<ul>
+<li>安装node.js、npm、git<br>  这两个均在官网上下载即可: <a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a> <a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>（<em>node.js建议下载LTS长期支持版</em>）</li>
+<li>创建<a href="https://github.com" target="_blank" rel="noopener">github</a>账户</li>
+<li>安装hexo</li>
+<li>上传github</li>
+<li>开始创作</li>
+</ul>
+</blockquote>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><strong>关于hexo搭建的资料真的很多，我这就写点踩过的坑，不多重复了</strong></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">手把手教你从0开始搭建自己的个人博客</a></li>
+<li><a href="https://www.cnblogs.com/debugxw/p/11006734.html" target="_blank" rel="noopener">win10使用Hexo+GitHub搭建个人博客</a></li>
+</ul>
+<h3 id="填坑记录"><a href="#填坑记录" class="headerlink" title="填坑记录"></a>填坑记录</h3><h4 id="1-npm速度慢。"><a href="#1-npm速度慢。" class="headerlink" title="1. npm速度慢。"></a>1. <code>npm</code>速度慢。</h4><p>毕竟墙是我天朝传统，还好有淘宝的镜像，可以用<code>cnpm</code>代替<code>npm</code><br>安装代码:<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+<h4 id="2-启动运行"><a href="#2-启动运行" class="headerlink" title="2.启动运行"></a>2.启动运行</h4><p><code>hexo g</code>–将md文件生成html文件<br><code>hexo s</code>–启动服务器，之后便可在<code>localhost:4000</code>预览了</p>
+<blockquote>
+<p>注：要先生成才能预览</p>
+</blockquote>
+<h4 id="3-hexo无法上传远端"><a href="#3-hexo无法上传远端" class="headerlink" title="3.hexo无法上传远端"></a>3.hexo无法上传远端</h4><ul>
+<li>在<strong>cmd</strong>中使用命令： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>运行一半后出现错误与警告，<br>原因：安装git时所选使用位置不对，无法在<strong>cmd</strong>中使用。<br>解决方法：直接将blog文件在<strong>git bush</strong>打开，然后照常使用原先命令即可</p>
+<ul>
+<li><strong>ssh</strong>密钥无法推送：可换用<strong>https</strong>链接的方式推送</li>
+</ul>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>整理了一下，现在看来都不是什么大问题，可在当时却困扰了我几天，<del>在弄不明白时甚至全部清空重新安装</del>(笑)，不知你是否也有相同的问题，希望能有所帮助。</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello,world!你好,世界!</title>
     <url>/2019/07/04/my%20first/</url>
     <content><![CDATA[<p>不知道该说什么，但转念一想还有什么比“hello world”更合适的吗？（笑）虽然早在七月初就建立了自己的博客，但因为考试一直到现在才有了时间来真正开始，万分激动。在此先要感谢羊哥<a href="https://space.bilibili.com/384068749" target="_blank" rel="noopener">codesheep</a>视频的详细讲解，对我搭建博客起了很大的帮助，名副其“手把手”之实啊，哈哈。以下便是对自己之后写博客的小思考。</p>
@@ -41,46 +81,6 @@
 ]]></content>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo搭建踩坑记录</title>
-    <url>/2019/08/25/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<p>看到关于博客的话题，想起自己在搭建hexo博客时的折腾，便写此文记录一下自己的搭建过程中踩过的坑，若有所助，倍感荣幸。</p>
-<a id="more"></a>
-
-<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><blockquote>
-<ul>
-<li>安装node.js、npm、git<br>  这两个均在官网上下载即可: <a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a> <a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>（<em>node.js建议下载LTS长期支持版</em>）</li>
-<li>创建<a href="https://github.com" target="_blank" rel="noopener">github</a>账户</li>
-<li>安装hexo</li>
-<li>上传github</li>
-<li>开始创作</li>
-</ul>
-</blockquote>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><strong>关于hexo搭建的资料真的很多，我这就写点踩过的坑，不多重复了</strong></p>
-<ul>
-<li><a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">手把手教你从0开始搭建自己的个人博客</a></li>
-<li><a href="https://www.cnblogs.com/debugxw/p/11006734.html" target="_blank" rel="noopener">win10使用Hexo+GitHub搭建个人博客</a></li>
-</ul>
-<h3 id="填坑记录"><a href="#填坑记录" class="headerlink" title="填坑记录"></a>填坑记录</h3><h4 id="1-npm速度慢。"><a href="#1-npm速度慢。" class="headerlink" title="1. npm速度慢。"></a>1. <code>npm</code>速度慢。</h4><p>毕竟墙是我天朝传统，还好有淘宝的镜像，可以用<code>cnpm</code>代替<code>npm</code><br>安装代码:<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
-<h4 id="2-启动运行"><a href="#2-启动运行" class="headerlink" title="2.启动运行"></a>2.启动运行</h4><p><code>hexo g</code>–将md文件生成html文件<br><code>hexo s</code>–启动服务器，之后便可在<code>localhost:4000</code>预览了</p>
-<blockquote>
-<p>注：要先生成才能预览</p>
-</blockquote>
-<h4 id="3-hexo无法上传远端"><a href="#3-hexo无法上传远端" class="headerlink" title="3.hexo无法上传远端"></a>3.hexo无法上传远端</h4><ul>
-<li>在<strong>cmd</strong>中使用命令： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>运行一半后出现错误与警告，<br>原因：安装git时所选使用位置不对，无法在<strong>cmd</strong>中使用。<br>解决方法：直接将blog文件在<strong>git bush</strong>打开，然后照常使用原先命令即可</p>
-<ul>
-<li><strong>ssh</strong>密钥无法推送：可换用<strong>https</strong>链接的方式推送</li>
-</ul>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>整理了一下，现在看来都不是什么大问题，可在当时却困扰了我几天，<del>在弄不明白时甚至全部清空重新安装</del>(笑)，不知你是否也有相同的问题，希望能有所帮助。</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
